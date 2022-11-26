@@ -1,26 +1,21 @@
 import type { Component } from 'solid-js';
+import { Routes, Route } from "@solidjs/router"
+
+import Login from "./pages/login"
+import PlaylistBuilder from "./pages/PlaylistBuilder"
 
 import logo from './logo.svg';
 import styles from './App.module.css';
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload. POO STICK
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 class="text-3xl font-bold underline">Hello</h1>
+      <Routes>
+        <Route path="/" component={Login} />
+        <Route path="/builder" component={PlaylistBuilder} />
+      </Routes>
+    </>
   );
 };
 
